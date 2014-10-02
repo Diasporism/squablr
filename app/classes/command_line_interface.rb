@@ -1,7 +1,3 @@
 class CommandLineInterface
-
-  def last_input
-    ""
-  end
-
+  attr_accessor :last_input
 end
