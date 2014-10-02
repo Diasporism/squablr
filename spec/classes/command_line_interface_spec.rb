@@ -8,7 +8,6 @@ describe CommandLineInterface do
       it 'the app stops running' do
         command_line_interface.last_input = 'quit'
         expect(command_line_interface.run).to eq 'Bye!'
-        expect(command_line_interface).to eq nil
       end
     end
   end
