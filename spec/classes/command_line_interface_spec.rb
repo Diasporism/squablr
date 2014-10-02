@@ -25,4 +25,10 @@ describe CommandLineInterface do
     end
   end
 
+  describe '#responses' do
+    it 'prints a set of responses' do
+      response_list = ['A Sweet Nothing', 'A Passive-Aggressive Comment', 'A Backhanded Compliment']
+      expect(command_line_interface.responses).to eq response_list
+    end
+  end
 end
