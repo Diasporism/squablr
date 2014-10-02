@@ -3,6 +3,16 @@ require_relative '../spec_helper'
 describe CommandLineInterface do
   let(:command_line_interface) { described_class.new }
 
+  describe '#run' do
+    context "when the last input given was 'quit'" do
+      it 'the app stops running' do
+        command_line_interface.last_input = 'quit'
+        expect(command_line_interface.run).to eq 'Bye!'
+        expect(command_line_interface).to eq nil
+      end
+    end
+  end
+
   describe '#last_input' do
     context 'when the object is first created' do
       it 'defaults the value to be empty' do
@@ -20,7 +30,7 @@ describe CommandLineInterface do
 
   describe '#instructions' do
     it 'prints a set of instructions to help the user understand what to do' do
-      text = 'Your robot lover is being snooty. What is your response?'
+      text = 'Your robot lover is being snooty. What do you want to respond with?'
       expect(command_line_interface.instructions).to eq text
     end
   end
