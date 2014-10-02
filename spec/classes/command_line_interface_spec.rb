@@ -10,6 +10,14 @@ describe CommandLineInterface do
         expect(command_line_interface.run).to eq 'Bye!'
       end
     end
+
+    context "when last input given was 'help'" do
+      it 'prints out instructions' do
+        instructions = command_line_interface.instructions
+        command_line_interface.last_input = 'help'
+        expect(command_line_interface.run).to eq instructions
+      end
+    end
   end
 
   describe '#last_input' do

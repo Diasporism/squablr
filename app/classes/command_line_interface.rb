@@ -4,7 +4,7 @@ class CommandLineInterface
   def run
     while last_input != 'quit'
       case last_input
-      when 'A'
+      when 'help'
         "Stuff"
       else
         "other stuff"
