@@ -1,23 +1,36 @@
 class CommandLineInterface
-  attr_accessor :last_input
+  attr_reader :last_output
 
-  def run
-    while last_input != 'quit'
-      case last_input
-      when 'help'
-        "Stuff"
-      else
-        "other stuff"
-      end
+  def ask_user_for_input
+    case gets.chomp
+    when 'quit'
+      exit_app
+    when 'help'
+      instructions
+      ask_user_for_input
+    else
+      ask_user_for_input
     end
-    "Bye!"
   end
 
   def instructions
-    'Your robot lover is being snooty. What do you want to respond with?'
+    @last_output = 'Your robot lover is being snooty. What do you want to respond with?'
+    puts last_output
   end
 
   def responses
-    ['A Sweet Nothing', 'A Passive-Aggressive Comment', 'A Backhanded Compliment']
+    response_list = [
+      'A Sweet Nothing',
+      'A Passive-Aggressive Comment',
+      'A Backhanded Compliment'
+    ]
+
+    @last_output = response_list.join("\n")
+    puts last_output
+  end
+
+  def exit_app
+    @last_output = 'Bye!'
+    puts last_output
   end
 end
