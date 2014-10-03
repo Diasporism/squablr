@@ -1,0 +1,3 @@
+class Sam < TwitterAccount
+
+end
