@@ -4,15 +4,14 @@ describe CommandLineInterface do
   let(:command_line_interface) { described_class.new }
 
   before do
-    # Suppress all 'puts' statements in terminal when running specs by
-    # stubbing the method call completely.
+    # Suppress all 'puts' and 'print' statements in terminal when
+    # running specs by stubbing the method call completely.
     allow(command_line_interface).to receive(:puts)
+    allow(command_line_interface).to receive(:print)
   end
 
   describe '#run' do
-    before do
-      expect(command_line_interface).to receive(:ask_user_for_input)
-    end
+    before { expect(command_line_interface).to receive(:ask_user_for_input) }
 
     it 'prints the instructions for the user to read' do
       expect(command_line_interface).to receive(:print_instructions)
@@ -20,15 +19,13 @@ describe CommandLineInterface do
     end
 
     it 'prints options that the user can choose from' do
-      expect(command_line_interface).to receive(:print_responses)
+      expect(command_line_interface).to receive(:print_response_options)
       command_line_interface.run
     end
   end
 
   describe '#ask_user_for_input' do
-    before do
-      expect(command_line_interface).to receive(:parse)
-    end
+    before { expect(command_line_interface).to receive(:parse) }
 
     it 'prompts the user for input' do
       expect(command_line_interface).to receive(:gets).and_return('value')
@@ -44,8 +41,33 @@ describe CommandLineInterface do
       end
     end
 
+    context 'when the user inputs "1"' do
+      it 'tweets a sweet nothing' do
+        expect(command_line_interface).to receive(:tweet_sweet_nothing)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('1')
+      end
+    end
+
+    context 'when the user inputs "2"' do
+      it 'tweets a passive-aggressive comment' do
+        expect(command_line_interface).to receive(:tweet_passive_aggressive_comment)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('2')
+      end
+    end
+
+    context 'when the user inputs "3"' do
+      it 'tweets a backhanded compliment' do
+        expect(command_line_interface).to receive(:tweet_backhanded_compliment)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('3')
+      end
+    end
+
     context 'when the user inputs "help"' do
-      it 'prints out instructions and prompts the user for input again' do
+      it 'prints out the list of commands and prompts the user for input again' do
+        expect(command_line_interface).to receive(:print_response_options)
         expect(command_line_interface).to receive(:ask_user_for_input)
         command_line_interface.parse('help')
       end
@@ -53,6 +75,7 @@ describe CommandLineInterface do
 
     context 'when the user inputs anything that is not a valid command' do
       it 'prints out instructions and prompts the user for input again' do
+        expect(command_line_interface).to receive(:print_response_options)
         expect(command_line_interface).to receive(:ask_user_for_input)
         command_line_interface.parse('qwerty')
       end
@@ -62,14 +85,14 @@ describe CommandLineInterface do
   describe '#print_instructions' do
     it 'prints a set of instructions to help the user understand what to do' do
       command_line_interface.print_instructions
-      expect(command_line_interface.last_output).to eq described_class::INSTRUCTIONS
+      expect(command_line_interface.last_output).to eq described_class::INTRO_MESSAGE
     end
   end
 
-  describe '#print_responses' do
+  describe '#print_response_options' do
     it 'prints a set of responses' do
-      command_line_interface.print_responses
-      response_list = described_class::RESPONSE_LIST.join("\n")
+      command_line_interface.print_response_options
+      response_list = described_class::RESPONSE_OPTIONS_LIST.join("\n")
       expect(command_line_interface.last_output).to eq response_list
     end
   end
