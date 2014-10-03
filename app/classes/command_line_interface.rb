@@ -47,18 +47,15 @@ class CommandLineInterface
   end
 
   def tweet_sweet_nothing
-    @last_output = 'If nothing lasts forever, can I be your nothing?'
-    puts "\n#{last_output}\n "
+    Pat.new.tweet_sweet_nothing
   end
 
   def tweet_passive_aggressive_comment
-    @last_output = 'I have neutral feelings towards you.'
-    puts "\n#{last_output}\n "
+    Pat.new.tweet_passive_aggressive_comment
   end
 
   def tweet_backhanded_compliment
-    @last_output = "I don't know what's more gorgeous,\nyour shiny bald metal head\nor your souless, unmoving eyes."
-    puts "\n#{last_output}\n "
+    Pat.new.tweet_backhanded_compliment
   end
 
   def print_instructions
