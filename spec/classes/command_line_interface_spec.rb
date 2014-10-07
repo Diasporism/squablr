@@ -43,25 +43,25 @@ describe CommandLineInterface do
 
     context 'when the user inputs "1"' do
       it 'tweets a sweet nothing' do
-        # expect(command_line_interface).to receive(:tweet_sweet_nothing)
-        # expect(command_line_interface).to receive(:ask_user_for_input)
-        # command_line_interface.parse('1')
+        expect(command_line_interface).to receive(:tweet_sweet_nothing)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('1')
       end
     end
 
     context 'when the user inputs "2"' do
       it 'tweets a passive-aggressive comment' do
-        # expect(command_line_interface).to receive(:tweet_passive_aggressive_comment)
-        # expect(command_line_interface).to receive(:ask_user_for_input)
-        # command_line_interface.parse('2')
+        expect(command_line_interface).to receive(:tweet_passive_aggressive_comment)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('2')
       end
     end
 
     context 'when the user inputs "3"' do
       it 'tweets a backhanded compliment' do
-        # expect(command_line_interface).to receive(:tweet_backhanded_compliment)
-        # expect(command_line_interface).to receive(:ask_user_for_input)
-        # command_line_interface.parse('3')
+        expect(command_line_interface).to receive(:tweet_backhanded_compliment)
+        expect(command_line_interface).to receive(:ask_user_for_input)
+        command_line_interface.parse('3')
       end
     end
 
@@ -79,6 +79,36 @@ describe CommandLineInterface do
         expect(command_line_interface).to receive(:ask_user_for_input)
         command_line_interface.parse('qwerty')
       end
+    end
+  end
+
+  describe '#tweet_sweet_nothing' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "sweet nothing" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "sweet nothing" tweet is sent from Sam to Pat'
+    end
+  end
+
+  describe '#tweet_passive_aggressive_comment' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "passive aggressive" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "passive aggressive" tweet is sent from Sam to Pat'
+    end
+  end
+
+  describe '#tweet_backhanded_compliment' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "backhanded compliment" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "backhanded compliment" tweet is sent from Sam to Pat'
     end
   end
 

@@ -1,4 +1,6 @@
 class Pat
+  attr_reader :client
+
   def initialize
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['PAT_CONSUMER_KEY']

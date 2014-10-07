@@ -1,4 +1,6 @@
 class Sam
+  attr_reader :client
+  
   def initialize
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['SAM_CONSUMER_KEY']
