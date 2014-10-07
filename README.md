@@ -22,10 +22,15 @@ $ bundle
 You will need to create and .env file that holds the account credentials for the robot Twitter accounts that are having the squabble:
 
 ```shell
-CONSUMER_KEY=your_consumer_key_here
-CONSUMER_SECRET=your_consumer_key_secret_here
-ACCESS_TOKEN=your_access_token_here
-ACCESS_TOKEN_SECRET=your_access_token_secret_here
+PAT_CONSUMER_KEY        = pat_consumer_key_here
+PAT_CONSUMER_SECRET     = pat_consumer_secret_here
+PAT_ACCESS_TOKEN        = pat_access_token_here
+PAT_ACCESS_TOKEN_SECRET = pat_access_token_secret_here
+
+SAM_CONSUMER_KEY        = sam_consumer_key_here
+SAM_CONSUMER_SECRET     = sam_consumer_secret_here
+SAM_ACCESS_TOKEN        = sam_access_token_here
+SAM_ACCESS_TOKEN_SECRET = sam_access_token_secret_here
 ```
 
 The above keys should reflect the keys and tokens for the Squablr1000 app on Twitter. The above example may change in the future if xAuth permissions are granted to the app.
