@@ -1,5 +1,5 @@
 class CommandLineInterface
-  INTRO_MESSAGE = "Welcome to Squablr! Who would you like to play as?"
+  INTRO_MESSAGE      = 'Welcome to Squablr! Who would you like to play as?'
 
   ROBOT_OPTIONS_LIST = [
     'Enter "1" to play as RoboPat3000.',
