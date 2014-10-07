@@ -8,7 +8,8 @@ class CommandLineInterface
     'Type "exit" to quit.'
   ]
 
-  attr_reader :last_output
+  attr_reader   :last_output
+  attr_accessor :selected_robot
 
   def run
     print_instructions
@@ -47,15 +48,15 @@ class CommandLineInterface
   end
 
   def tweet_sweet_nothing
-    Pat.new.tweet_sweet_nothing
+    current_robot.tweet_sweet_nothing
   end
 
   def tweet_passive_aggressive_comment
-    Pat.new.tweet_passive_aggressive_comment
+    current_robot.tweet_passive_aggressive_comment
   end
 
   def tweet_backhanded_compliment
-    Pat.new.tweet_backhanded_compliment
+    current_robot.tweet_backhanded_compliment
   end
 
   def print_instructions
@@ -71,5 +72,9 @@ class CommandLineInterface
   def exit_app
     @last_output = 'Bye!'
     puts last_output
+  end
+
+  def current_robot
+    Object.const_get(selected_robot).new
   end
 end
