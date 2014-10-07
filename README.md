@@ -33,7 +33,7 @@ SAM_ACCESS_TOKEN        = sam_access_token_here
 SAM_ACCESS_TOKEN_SECRET = sam_access_token_secret_here
 ```
 
-The above keys should reflect the keys and tokens for the Squablr1000 app on Twitter. The above example may change in the future if xAuth permissions are granted to the app.
+The above keys should reflect the keys and tokens for the SquablrPat3000 and SquablrSat3000 apps on Twitter. The above example may change in the future if xAuth permissions are granted to the app.
 
 Finally, start the app:
 
