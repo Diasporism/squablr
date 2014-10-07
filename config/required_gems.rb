@@ -1,0 +1,6 @@
+require 'dotenv'
+require 'oauth'
+require 'pry-byebug'
+require 'require_all'
+require 'rspec'
+require 'twitter'

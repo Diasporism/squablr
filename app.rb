@@ -1,3 +1,3 @@
-require_relative './app/classes/command_line_interface'
+require_relative './config/initializer'
 
 CommandLineInterface.new.run

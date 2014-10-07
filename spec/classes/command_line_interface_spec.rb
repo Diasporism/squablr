@@ -82,6 +82,36 @@ describe CommandLineInterface do
     end
   end
 
+  describe '#tweet_sweet_nothing' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "sweet nothing" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "sweet nothing" tweet is sent from Sam to Pat'
+    end
+  end
+
+  describe '#tweet_passive_aggressive_comment' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "passive aggressive" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "passive aggressive" tweet is sent from Sam to Pat'
+    end
+  end
+
+  describe '#tweet_backhanded_compliment' do
+    context 'when the user is playing the role of Pat' do
+      it 'a "backhanded compliment" tweet is sent from Pat to Sam'
+    end
+
+    context 'when the user is playing the role of Sam' do
+      it 'a "backhanded compliment" tweet is sent from Sam to Pat'
+    end
+  end
+
   describe '#print_instructions' do
     it 'prints a set of instructions to help the user understand what to do' do
       command_line_interface.print_instructions

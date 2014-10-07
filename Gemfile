@@ -1,0 +1,6 @@
+gem 'dotenv'
+gem 'oauth'
+gem 'pry-byebug'
+gem 'rspec'
+gem 'require_all'
+gem 'twitter'

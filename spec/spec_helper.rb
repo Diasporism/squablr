@@ -1,9 +1,4 @@
-# Require all the gems that we are using
-require 'rspec'
-require 'require_all'
-
-# Require all the files in are project so Rspec has access to them
-require_rel '../app'
+require_relative '../config/initializer'
 
 # Configure Rspec settings.
 RSpec.configure do |config|
