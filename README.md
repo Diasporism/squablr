@@ -36,6 +36,4 @@ Finally, start the app:
 ruby app.rb
 ```
 
-The application is full encapsulated within the terminal. You see prompts to choose different actions.
-
-Have fun!
+The application is fully encapsulated within the terminal. Follow the prompts and have fun!
