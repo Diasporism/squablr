@@ -2,8 +2,8 @@ require_relative '../../spec_helper'
 
 describe Sam do
 
-  it 'inherits from TwitterAccount' do
-    expect(described_class < TwitterAccount).to eq true
+  it 'exists' do
+    expect(described_class).to be
   end
 
 end
