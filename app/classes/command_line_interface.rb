@@ -44,7 +44,7 @@ class CommandLineInterface
     elsif input == '2'
       assign_robot('Sam')
     else
-      puts "That's not a valid option.\n"
+      puts "\nThat's not a valid option.\n "
       print_robot_selection_options
       prompt_user_for_robot_selection
     end
@@ -97,7 +97,7 @@ class CommandLineInterface
   end
 
   def print_scenario
-    @last_output = "\nHey, #{selected_robot}! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?\n"
+    @last_output = "\nHey, #{selected_robot}! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?"
     puts "#{last_output}\n "
   end
 
