@@ -223,7 +223,7 @@ describe CommandLineInterface do
       it 'prints a set of instructions to help the user understand what to do' do
         command_line_interface.selected_robot = 'Pat'
         command_line_interface.print_scenario
-        text = "\nHey, Pat! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?\n"
+        text = "\nHey, Pat! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?"
         expect(command_line_interface.last_output).to eq text
       end
     end
@@ -232,7 +232,7 @@ describe CommandLineInterface do
       it 'prints a set of instructions to help the user understand what to do' do
         command_line_interface.selected_robot = 'Sam'
         command_line_interface.print_scenario
-        text = "\nHey, Sam! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?\n"
+        text = "\nHey, Sam! Your robot lover has been saying uncool things about you on Twitter. How do you want to respond?"
         expect(command_line_interface.last_output).to eq text
       end
     end
